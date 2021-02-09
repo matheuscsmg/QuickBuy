@@ -13,8 +13,4 @@
     <None Remove="NovaPasta\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contratos\" />
-  </ItemGroup>
-
 </Project>

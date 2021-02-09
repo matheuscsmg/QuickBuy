@@ -9,7 +9,8 @@
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (Id == 0)
+                AdicionarCritica("Id do produto não informado");
         }
     }
 }
