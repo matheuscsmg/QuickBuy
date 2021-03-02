@@ -7,10 +7,19 @@
         public string  Descricao { get; set; }
         public decimal Preco { get; set; }
 
+        public string NomeArquivo { get; set; }
+
         public override void Validate()
         {
-            if (Id == 0)
-                AdicionarCritica("Id do produto não informado");
+            if (string.IsNullOrEmpty(Nome))
+            {
+                AdicionarCritica("Nome do produto não foi informado");
+            }
+            if (string.IsNullOrEmpty(Descricao))
+            {
+                AdicionarCritica("Descrição não foi informado");
+            }
+
         }
     }
 }
