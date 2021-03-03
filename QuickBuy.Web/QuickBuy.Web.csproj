@@ -25,9 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\arquivos\66425843_4_20213318528.jpg" />
+    <Content Remove="wwwroot\arquivos\arquivoEnv_202132185038.arquivoEnviado" />
+    <Content Remove="wwwroot\arquivos\arquivoEnv_20213219715.arquivoEnviado" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
     <None Remove="ClientApp\src\app\modelo\produto.ts" />
     <None Remove="ClientApp\src\app\modelo\usuario.ts" />
+    <None Remove="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
     <None Remove="ClientApp\src\app\produto\produto.component.ts" />
     <None Remove="ClientApp\src\app\servicos\produto\produto.servico.ts" />
     <None Remove="ClientApp\src\app\servicos\usuario\usuario.servico.ts" />
@@ -44,6 +51,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modelo\produto.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modelo\usuario.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\produto\produto.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\produto\produto.servico.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\servicos\usuario\usuario.servico.ts" />

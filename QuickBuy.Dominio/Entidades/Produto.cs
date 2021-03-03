@@ -17,7 +17,7 @@
             }
             if (string.IsNullOrEmpty(Descricao))
             {
-                AdicionarCritica("Descrição não foi informado");
+                AdicionarCritica("Descrição não foi informada");
             }
 
         }
