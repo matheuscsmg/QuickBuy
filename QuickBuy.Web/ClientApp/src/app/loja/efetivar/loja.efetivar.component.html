@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of produtos">
+            <td style="width:10%"><img src="../../../../../arquivos/{{p.nomeArquivo}}" style="width:100px; height:100px;"/></td>
+            <td style="width:20%">{{p.descricao}}</td>
+            <td style="width:5%"></td>
+            <td style="width:5%">€ {{p.preco}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2">Tela</div>
+  </div>
+</div>
