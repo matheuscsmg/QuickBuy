@@ -2,6 +2,7 @@ import { Produto } from "../../modelo/produto";
 
 export class LojaCarrinhoCompras {
   public produtos: Produto[] = [];
+  public evitarDuplicidade: boolean;
 
   public adicionar(produto: Produto) {
     var produtoLocaStorage = localStorage.getItem("produtoLocaStorage");
@@ -11,9 +12,19 @@ export class LojaCarrinhoCompras {
     } else {
       //se ja existir pelo menos um item armazenado na sessao(locasLocalStorage)
       this.produtos = JSON.parse(produtoLocaStorage);
-      this.produtos.push(produto);
+      for (let produtoTeste of this.produtos) {
+        if (produtoTeste.id == produto.id) {
+          alert("Produto já adicionado no carrinho ");
+          this.evitarDuplicidade = true;
+          
+        }
+      }
+      if (!this.evitarDuplicidade) {
+        this.produtos.push(produto);
+      } else {
+        localStorage.setItem("produtoLocaStorage", JSON.stringify(this.produtos));
+      }
     }
-
     localStorage.setItem("produtoLocaStorage", JSON.stringify(this.produtos));
   }
 

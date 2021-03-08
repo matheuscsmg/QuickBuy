@@ -14,7 +14,19 @@ var LojaCarrinhoCompras = /** @class */ (function () {
         else {
             //se ja existir pelo menos um item armazenado na sessao(locasLocalStorage)
             this.produtos = JSON.parse(produtoLocaStorage);
-            this.produtos.push(produto);
+            for (var _i = 0, _a = this.produtos; _i < _a.length; _i++) {
+                var produtoTeste = _a[_i];
+                if (produtoTeste.id == produto.id) {
+                    alert("Produto já adicionado no carrinho ");
+                    this.evitarDuplicidade = true;
+                }
+            }
+            if (!this.evitarDuplicidade) {
+                this.produtos.push(produto);
+            }
+            else {
+                localStorage.setItem("produtoLocaStorage", JSON.stringify(this.produtos));
+            }
         }
         localStorage.setItem("produtoLocaStorage", JSON.stringify(this.produtos));
     };
