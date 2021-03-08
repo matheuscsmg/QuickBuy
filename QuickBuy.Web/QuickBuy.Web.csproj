@@ -36,6 +36,8 @@
     <None Remove="ClientApp\src\app\loja\efetivar\loja.efetivar.component.ts" />
     <None Remove="ClientApp\src\app\loja\pesquisa\loja.pesquisa.component.ts" />
     <None Remove="ClientApp\src\app\loja\produto\loja.produto.component.ts" />
+    <None Remove="ClientApp\src\app\modelo\itemPedido.ts" />
+    <None Remove="ClientApp\src\app\modelo\pedido.ts" />
     <None Remove="ClientApp\src\app\modelo\produto.ts" />
     <None Remove="ClientApp\src\app\modelo\usuario.ts" />
     <None Remove="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
@@ -57,6 +59,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\loja\efetivar\loja.efetivar.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\loja\pesquisa\loja.pesquisa.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\loja\produto\loja.produto.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modelo\itemPedido.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\modelo\pedido.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modelo\produto.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\modelo\usuario.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
