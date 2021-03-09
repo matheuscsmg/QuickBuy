@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { ItemPedido } from "../../modelo/itemPedido";
 import { Pedido } from "../../modelo/pedido";
 import { Produto } from "../../modelo/produto";
+import { PedidoServico } from "../../servicos/pedido/pedido.servico";
 import { UsuarioServico } from "../../servicos/usuario/usuario.servico";
 import { LojaCarrinhoCompras } from "../carrinho-compras/loja.carrinho.compras";
 @Component({
@@ -20,7 +22,7 @@ export class LojaEfetivarComponent implements OnInit {
     this.atualizarTotal();
   }
 
-  constructor(private usuarioServico: UsuarioServico) {
+  constructor(private usuarioServico: UsuarioServico, private pedidoServico: PedidoServico, private router: Router) {
 
   }
 
@@ -50,8 +52,17 @@ export class LojaEfetivarComponent implements OnInit {
 
 
   public efetivarCompra() {
-    let pedido = this.criarPedido();
-
+    this.pedidoServico.efetivarCompra(this.criarPedido())
+      .subscribe(
+        pedidoId => {
+          sessionStorage.setItem("pedidoId", pedidoId.toString());
+          this.produtos = [];
+          this.carrinhoCompras.limparCarrinhoCompras();
+          this.router.navigate(["/compra-realizada-sucesso"]);
+        },
+        e => {
+          console.log(e.error);
+        });
   }
 
   public criarPedido(): Pedido {
@@ -64,6 +75,7 @@ export class LojaEfetivarComponent implements OnInit {
     pedido.dataPrevisaoEntrega = new Date();
     pedido.formaPagamentoId = 1;
     pedido.numeroEndereco = "386";
+    pedido.enderecoCompleto = "Rua Nove de Abril, 683";
 
     this.produtos = this.carrinhoCompras.obterProdutos();
 
